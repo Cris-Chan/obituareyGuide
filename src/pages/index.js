@@ -5,25 +5,26 @@ import Input from "@/components/input";
 
 const questions = [
   {
-    prompt: "What was the person's full name?",
+    prompt: "Can you tell me the name of your loved one?",
     call: "name",
     answer: "unanswered",
     type: "text",
   },
   {
-    prompt: "What was their age at the time of death?",
+    prompt: "Can you share their age with me?",
     call: "age",
     answer: "unanswered",
     type: "number",
   },
   {
-    prompt: "What was the cause of Death?",
-    call: "causeofdeath",
+    prompt:
+      "What were some of the things that your loved one was passionate about?",
+    call: "interests",
     answer: "unanswered",
-    type: "text",
+    type: "textarea",
   },
   {
-    prompt: "What was their occupation or profession?",
+    prompt: "Tell me little bit about their occupation or profession?",
     call: "profession",
     answer: "unanswered",
     type: "text",
@@ -35,39 +36,40 @@ const questions = [
     type: "text",
   },
   {
-    prompt: "Where did they live during their adult life?",
+    prompt:
+      "What were some of the places they lived and went during their life?",
     call: "adultHome",
     answer: "unanswered",
     type: "text",
   },
   {
-    prompt: "What were their hobbies or interests?",
+    prompt: "What were some of the things that they enjoyed doing?",
     call: "interests",
     answer: "unanswered",
     type: "textarea",
   },
   {
-    prompt: "What were some of their achievements or notable accomplishments?",
+    prompt: "Tell me about some of their notable achievements?",
     call: "accomplishments",
     answer: "unanswered",
     type: "textarea",
   },
   {
-    prompt: "Who were their close family members and loved ones?",
+    prompt: "Who were some of the people they were closest to?",
     call: "lovedones",
     answer: "unanswered",
     type: "textarea",
   },
   {
     prompt:
-      "What were some of their personality traits or values that they were known for?",
+      "Can you share some of their personality traits or values that they were known for?",
     call: "personality",
     answer: "unanswered",
     type: "textarea",
   },
   {
     prompt:
-      "What was their favorite quote, saying or piece of advice they often gave?",
+      "What was their favorite quote, saying, or piece of advice that they often shared?",
     call: "sayings",
     answer: "unanswered",
     type: "textarea",
@@ -110,10 +112,10 @@ const Landing = () => {
       console.log("AHHH");
       setVisable(false);
       setSetup(true);
-    }, 13000);
+    }, 30000);
     setTimeout(() => {
       setFade(true);
-    }, 14000);
+    }, 32000);
   }, []);
 
   return (
@@ -126,21 +128,21 @@ const Landing = () => {
       >
         <TypeAnimation
           sequence={[
-            "Hey there im John!", // Types 'One'
-            2000, // Waits 2s
-            "An Ai assistant here to help you create a thoughtful obituary", // Deletes 'One' and types 'Two'
-            1000, // Waits 1s
-            "Lets get started!", // Types 'Three' without deleting 'Two'
-            2500,
+            "Hello, I'm John, an Ai here to help you create a meaningful and thoughtful obituary for your loved one.", // Types the first sentence
+            3000, // Waits for 3s
+            "Together, we can create an obituary that honors your loved one's memory and celebrates their life and accomplishments.", // Types the third sentence
+            4000, // Waits for 5s
+            "Let's begin by answering a few questions about your loved one.", // Types the fourth sentence
+            8000, // Waits for 10s
             () => {
-              console.log("Done typing!"); // Place optional callbacks anywhere in the array
+              console.log("Done typing!"); // Optional callback
             },
           ]}
           wrapper="div"
           cursor={false}
           repeat={0}
           speed={50}
-          deletionSpeed={80}
+          deletionSpeed={85}
           className={"text-5xl font-bold text-center text-gray-50"}
         />
       </div>
